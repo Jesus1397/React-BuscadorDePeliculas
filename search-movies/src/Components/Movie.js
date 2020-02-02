@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Movie extends Component {
   static propTypes = {
@@ -11,7 +12,7 @@ class Movie extends Component {
   render() {
     const { id, poster, title, year } = this.props;
     return (
-      <a href={`?id=${id}`} className="card">
+      <Link to={`/details/${id}`} className="card">
         <div className="card-image">
           <figure className="image ">
             <img src={poster} alt={title} />
@@ -25,7 +26,7 @@ class Movie extends Component {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     );
   }
 }
